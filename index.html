@@ -1,0 +1,961 @@
+<!--
+#   UCLFixtures - index.html - main UI
+#
+
+#   CL Fixture,
+#   An alorithm prototype to generate UCL(r) fixtures
+#   Copyright (c) Ashutosh Verma 2017
+#       (https://levodex.com/, https://github.com/levodex/)
+#   All rights reserved
+#   
+#
+#
+#   CL, UCL, UEFA etc., their logos, images & soundtracks are all intellectual properties owned by UEFA and have been included for aesthetic/demonstration purposes ONLY.
+#   Please check additional licensing info by UEFA before using these digital resources
+#   
+#
+#
+#
+#
+
+
+#
+#	Main UI
+#
+-->
+
+
+<html>
+	<style>
+		html
+		{
+			background:url('bg.jpg');
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-position: center;
+			background-size: cover;
+			opacity: 0.5;
+			color:white;
+		}
+		#tm
+		{
+			position:fixed;
+			width:80%;
+			height:80%;
+			top:10%;
+			left:10%;
+			border:none;
+			background:rgba(0, 0, 0, 1);
+		}
+		td
+		{
+			border:none;
+		}
+	</style>
+	<form method="GET" action="uclfixture.php">
+		<table id="tm" border="1" cellpadding="12">
+			<thead>
+				<td>Position</td><td>Teams</td><td>League</td><td>Position</td><td>Teams</td><td>League</td><td><input type="reset"/></td>
+			</thead>
+			<tr><div>
+				<td>1 A.</td>
+				<td>
+					<select name="a1">
+						<option value="muntd">Manchester United</option>
+						<option value="chel">Chelsea</option>
+						<option value="leic">Leciester City</option>
+						<option value="ars">Arsenal</option>
+						<option value="mancity">Manchester City</option>
+						<option value="liv">Liverpool</option>
+						<option value="spurs">Tottenham Hotspurs</option>
+						<option value="bar">Barcelona</option>
+						<option value="rma">Real Madrid</option>
+						<option value="atm">Athletico Madrid</option>
+						<option value="sev">Sevilla</option>
+						<option value="dpr">Deportivo</option>
+						<option value="val">Valencia</option>
+						<option value="juv">Juventus</option>
+						<option value="acm">AC Milan</option>
+						<option value="itm">Inter Milan</option>
+						<option value="npl">Napoli</option>
+						<option value="dor">Borussia Dortmund</option>
+						<option value="fcb">FC Bayern Munich</option>
+						<option value="sch">FC Schalke 04</option>
+						<option value="lev">Bayer Leverkusen</option>
+						<option value="gld">Borussia MonchenGladbach</option>
+						<option value="psg">Paris Saint Germain</option>
+						<option value="wol">Wolfsburg</option>
+						<option value="lyn">Lyon</option>
+						<option value="fcznit">FC Zenit</option>
+						<option value="ajfx">Ajax FC</option>
+						<option value="mrs">Marseille</option>
+						<option value="glt">Galatasaray</option>
+						<option value="ben">Benfica</option>
+						<option value="psv">PSV Eidenhoven</option>
+						<option value="cel">Celtic</option>
+						<option value="mon">Monaco</option>
+						<option value="roma">AS Roma</option>
+						<option value="fcp">FC Porto</option>
+					</select>
+				</td>
+				<td>
+					<select name="b1">
+						<option value="laliga">La liga Santander</option>
+						<option value="bundes">Bundesliga</option>
+						<option value="barclay">English Premier League</option>
+						<option value="ligue">Ligue 1</option>
+						<option value="seria">Seria A</option>
+						<option value="polish">Ekstraklasa Poland</option>
+						<option value="russian">Russian Football Premier League</option>
+						<option value="nether">Eredivisie Netherlands</option>
+						<option value="portugal">Liga Portuguese</option>
+						<option value="turkey">Super Lig Turkey</option>
+					</select>
+				</td>
+			</div><div>
+				<td>1 B.</td>
+				<td>
+					<select name="a2">
+						<option value="muntd">Manchester United</option>
+						<option value="chel">Chelsea</option>
+						<option value="leic">Leciester City</option>
+						<option value="ars">Arsenal</option>
+						<option value="mancity">Manchester City</option>
+						<option value="liv">Liverpool</option>
+						<option value="spurs">Tottenham Hotspurs</option>
+						<option value="bar">Barcelona</option>
+						<option value="rma">Real Madrid</option>
+						<option value="atm">Athletico Madrid</option>
+						<option value="sev">Sevilla</option>
+						<option value="dpr">Deportivo</option>
+						<option value="val">Valencia</option>
+						<option value="juv">Juventus</option>
+						<option value="acm">AC Milan</option>
+						<option value="itm">Inter Milan</option>
+						<option value="npl">Napoli</option>
+						<option value="dor">Borussia Dortmund</option>
+						<option value="fcb">FC Bayern Munich</option>
+						<option value="sch">FC Schalke 04</option>
+						<option value="lev">Bayer Leverkusen</option>
+						<option value="gld">Borussia MonchenGladbach</option>
+						<option value="psg">Paris Saint Germain</option>
+						<option value="wol">Wolfsburg</option>
+						<option value="lyn">Lyon</option>
+						<option value="fcznit">FC Zenit</option>
+						<option value="ajfx">Ajax FC</option>
+						<option value="mrs">Marseille</option>
+						<option value="glt">Galatasaray</option>
+						<option value="ben">Benfica</option>
+						<option value="psv">PSV Eidenhoven</option>
+						<option value="cel">Celtic</option>
+						<option value="mon">Monaco</option>
+						<option value="roma">AS Roma</option>
+						<option value="fcp">FC Porto</option>
+					</select>
+				</td>
+				<td>
+					<select name="b2">
+						<option value="bundes">Bundesliga</option>
+						<option value="laliga">La liga Santander</option>
+						<option value="barclay">English Premier League</option>
+						<option value="ligue">Ligue 1</option>
+						<option value="seria">Seria A</option>
+						<option value="polish">Ekstraklasa Poland</option>
+						<option value="russian">Russian Football Premier League</option>
+						<option value="nether">Eredivisie Netherlands</option>
+						<option value="portugal">Liga Portuguese</option>
+						<option value="turkey">Super Lig Turkey</option>
+					</select>
+				</td>
+			</div>
+			</tr>
+			<tr><div>
+				<td>2 A.</td>
+				<td>
+					<select name="a3">
+						<option value="muntd">Manchester United</option>
+						<option value="chel">Chelsea</option>
+						<option value="leic">Leciester City</option>
+						<option value="ars">Arsenal</option>
+						<option value="mancity">Manchester City</option>
+						<option value="liv">Liverpool</option>
+						<option value="spurs">Tottenham Hotspurs</option>
+						<option value="bar">Barcelona</option>
+						<option value="rma">Real Madrid</option>
+						<option value="atm">Athletico Madrid</option>
+						<option value="sev">Sevilla</option>
+						<option value="dpr">Deportivo</option>
+						<option value="val">Valencia</option>
+						<option value="juv">Juventus</option>
+						<option value="acm">AC Milan</option>
+						<option value="itm">Inter Milan</option>
+						<option value="npl">Napoli</option>
+						<option value="dor">Borussia Dortmund</option>
+						<option value="fcb">FC Bayern Munich</option>
+						<option value="sch">FC Schalke 04</option>
+						<option value="lev">Bayer Leverkusen</option>
+						<option value="gld">Borussia MonchenGladbach</option>
+						<option value="psg">Paris Saint Germain</option>
+						<option value="wol">Wolfsburg</option>
+						<option value="lyn">Lyon</option>
+						<option value="fcznit">FC Zenit</option>
+						<option value="ajfx">Ajax FC</option>
+						<option value="mrs">Marseille</option>
+						<option value="glt">Galatasaray</option>
+						<option value="ben">Benfica</option>
+						<option value="psv">PSV Eidenhoven</option>
+						<option value="cel">Celtic</option>
+						<option value="mon">Monaco</option>
+						<option value="roma">AS Roma</option>
+						<option value="fcp">FC Porto</option>
+					</select>
+				</td>
+				<td>
+					<select name="b3">
+						<option value="bundes">Bundesliga</option>
+						<option value="laliga">La liga Santander</option>
+						<option value="barclay">English Premier League</option>
+						<option value="ligue">Ligue 1</option>
+						<option value="seria">Seria A</option>
+						<option value="polish">Ekstraklasa Poland</option>
+						<option value="russian">Russian Football Premier League</option>
+						<option value="nether">Eredivisie Netherlands</option>
+						<option value="portugal">Liga Portuguese</option>
+						<option value="turkey">Super Lig Turkey</option>
+					</select>
+				</td>
+			</div><div>
+				<td>2 B.</td>
+				<td>
+					<select name="a4">
+						<option value="muntd">Manchester United</option>
+						<option value="chel">Chelsea</option>
+						<option value="leic">Leciester City</option>
+						<option value="ars">Arsenal</option>
+						<option value="mancity">Manchester City</option>
+						<option value="liv">Liverpool</option>
+						<option value="spurs">Tottenham Hotspurs</option>
+						<option value="bar">Barcelona</option>
+						<option value="rma">Real Madrid</option>
+						<option value="atm">Athletico Madrid</option>
+						<option value="sev">Sevilla</option>
+						<option value="dpr">Deportivo</option>
+						<option value="val">Valencia</option>
+						<option value="juv">Juventus</option>
+						<option value="acm">AC Milan</option>
+						<option value="itm">Inter Milan</option>
+						<option value="npl">Napoli</option>
+						<option value="dor">Borussia Dortmund</option>
+						<option value="fcb">FC Bayern Munich</option>
+						<option value="sch">FC Schalke 04</option>
+						<option value="lev">Bayer Leverkusen</option>
+						<option value="gld">Borussia MonchenGladbach</option>
+						<option value="psg">Paris Saint Germain</option>
+						<option value="wol">Wolfsburg</option>
+						<option value="lyn">Lyon</option>
+						<option value="fcznit">FC Zenit</option>
+						<option value="ajfx">Ajax FC</option>
+						<option value="mrs">Marseille</option>
+						<option value="glt">Galatasaray</option>
+						<option value="ben">Benfica</option>
+						<option value="psv">PSV Eidenhoven</option>
+						<option value="cel">Celtic</option>
+						<option value="mon">Monaco</option>
+						<option value="roma">AS Roma</option>
+						<option value="fcp">FC Porto</option>
+					</select>
+				</td>
+				<td>
+					<select name="b4">
+						<option value="barclay">English Premier League</option>
+						<option value="bundes">Bundesliga</option>
+						<option value="laliga">La liga Santander</option>
+						<option value="ligue">Ligue 1</option>
+						<option value="seria">Seria A</option>
+						<option value="polish">Ekstraklasa Poland</option>
+						<option value="russian">Russian Football Premier League</option>
+						<option value="nether">Eredivisie Netherlands</option>
+						<option value="portugal">Liga Portuguese</option>
+						<option value="turkey">Super Lig Turkey</option>
+					</select>
+				</td>
+			</div>
+			</tr>
+			<tr><div>
+				<td>3 A.</td>
+				<td>
+					<select name="a5">
+						<option value="muntd">Manchester United</option>
+						<option value="chel">Chelsea</option>
+						<option value="leic">Leciester City</option>
+						<option value="ars">Arsenal</option>
+						<option value="mancity">Manchester City</option>
+						<option value="liv">Liverpool</option>
+						<option value="spurs">Tottenham Hotspurs</option>
+						<option value="bar">Barcelona</option>
+						<option value="rma">Real Madrid</option>
+						<option value="atm">Athletico Madrid</option>
+						<option value="sev">Sevilla</option>
+						<option value="dpr">Deportivo</option>
+						<option value="val">Valencia</option>
+						<option value="juv">Juventus</option>
+						<option value="acm">AC Milan</option>
+						<option value="itm">Inter Milan</option>
+						<option value="npl">Napoli</option>
+						<option value="dor">Borussia Dortmund</option>
+						<option value="fcb">FC Bayern Munich</option>
+						<option value="sch">FC Schalke 04</option>
+						<option value="lev">Bayer Leverkusen</option>
+						<option value="gld">Borussia MonchenGladbach</option>
+						<option value="psg">Paris Saint Germain</option>
+						<option value="wol">Wolfsburg</option>
+						<option value="lyn">Lyon</option>
+						<option value="fcznit">FC Zenit</option>
+						<option value="ajfx">Ajax FC</option>
+						<option value="mrs">Marseille</option>
+						<option value="glt">Galatasaray</option>
+						<option value="ben">Benfica</option>
+						<option value="psv">PSV Eidenhoven</option>
+						<option value="cel">Celtic</option>
+						<option value="mon">Monaco</option>
+						<option value="roma">AS Roma</option>
+						<option value="fcp">FC Porto</option>
+					</select>
+				</td>
+				<td>
+					<select name="b5">
+						<option value="barclay">English Premier League</option>
+						<option value="laliga">La liga Santander</option>
+						<option value="bundes">Bundesliga</option>
+						<option value="ligue">Ligue 1</option>
+						<option value="seria">Seria A</option>
+						<option value="polish">Ekstraklasa Poland</option>
+						<option value="russian">Russian Football Premier League</option>
+						<option value="nether">Eredivisie Netherlands</option>
+						<option value="portugal">Liga Portuguese</option>
+						<option value="turkey">Super Lig Turkey</option>
+					</select>
+				</td>
+			</div><div>
+				<td>3 B.</td>
+				<td>
+					<select name="a6">
+						<option value="muntd">Manchester United</option>
+						<option value="chel">Chelsea</option>
+						<option value="leic">Leciester City</option>
+						<option value="ars">Arsenal</option>
+						<option value="mancity">Manchester City</option>
+						<option value="liv">Liverpool</option>
+						<option value="spurs">Tottenham Hotspurs</option>
+						<option value="bar">Barcelona</option>
+						<option value="rma">Real Madrid</option>
+						<option value="atm">Athletico Madrid</option>
+						<option value="sev">Sevilla</option>
+						<option value="dpr">Deportivo</option>
+						<option value="val">Valencia</option>
+						<option value="juv">Juventus</option>
+						<option value="acm">AC Milan</option>
+						<option value="itm">Inter Milan</option>
+						<option value="npl">Napoli</option>
+						<option value="dor">Borussia Dortmund</option>
+						<option value="fcb">FC Bayern Munich</option>
+						<option value="sch">FC Schalke 04</option>
+						<option value="lev">Bayer Leverkusen</option>
+						<option value="gld">Borussia MonchenGladbach</option>
+						<option value="psg">Paris Saint Germain</option>
+						<option value="wol">Wolfsburg</option>
+						<option value="lyn">Lyon</option>
+						<option value="fcznit">FC Zenit</option>
+						<option value="ajfx">Ajax FC</option>
+						<option value="mrs">Marseille</option>
+						<option value="glt">Galatasaray</option>
+						<option value="ben">Benfica</option>
+						<option value="psv">PSV Eidenhoven</option>
+						<option value="cel">Celtic</option>
+						<option value="mon">Monaco</option>
+						<option value="roma">AS Roma</option>
+						<option value="fcp">FC Porto</option>
+					</select>
+				</td>
+				<td>
+					<select name="b6">
+						<option value="ligue">Ligue 1</option>
+						<option value="barclay">English Premier League</option>
+						<option value="laliga">La liga Santander</option>
+						<option value="bundes">Bundesliga</option>
+						<option value="seria">Seria A</option>
+						<option value="polish">Ekstraklasa Poland</option>
+						<option value="russian">Russian Football Premier League</option>
+						<option value="nether">Eredivisie Netherlands</option>
+						<option value="portugal">Liga Portuguese</option>
+						<option value="turkey">Super Lig Turkey</option>
+					</select>
+				</td>
+			</div>
+			</tr>
+			<tr><div>
+				<td>4 A.</td>
+				<td>
+					<select name="a7">
+						<option value="muntd">Manchester United</option>
+						<option value="chel">Chelsea</option>
+						<option value="leic">Leciester City</option>
+						<option value="ars">Arsenal</option>
+						<option value="mancity">Manchester City</option>
+						<option value="liv">Liverpool</option>
+						<option value="spurs">Tottenham Hotspurs</option>
+						<option value="bar">Barcelona</option>
+						<option value="rma">Real Madrid</option>
+						<option value="atm">Athletico Madrid</option>
+						<option value="sev">Sevilla</option>
+						<option value="dpr">Deportivo</option>
+						<option value="val">Valencia</option>
+						<option value="juv">Juventus</option>
+						<option value="acm">AC Milan</option>
+						<option value="itm">Inter Milan</option>
+						<option value="npl">Napoli</option>
+						<option value="dor">Borussia Dortmund</option>
+						<option value="fcb">FC Bayern Munich</option>
+						<option value="sch">FC Schalke 04</option>
+						<option value="lev">Bayer Leverkusen</option>
+						<option value="gld">Borussia MonchenGladbach</option>
+						<option value="psg">Paris Saint Germain</option>
+						<option value="wol">Wolfsburg</option>
+						<option value="lyn">Lyon</option>
+						<option value="fcznit">FC Zenit</option>
+						<option value="ajfx">Ajax FC</option>
+						<option value="mrs">Marseille</option>
+						<option value="glt">Galatasaray</option>
+						<option value="ben">Benfica</option>
+						<option value="psv">PSV Eidenhoven</option>
+						<option value="cel">Celtic</option>
+						<option value="mon">Monaco</option>
+						<option value="roma">AS Roma</option>
+						<option value="fcp">FC Porto</option>
+					</select>
+				</td>
+				<td>
+					<select name="b7">
+						<option value="ligue">Ligue 1</option>
+						<option value="laliga">La liga Santander</option>
+						<option value="bundes">Bundesliga</option>
+						<option value="barclay">English Premier League</option>
+						<option value="seria">Seria A</option>
+						<option value="polish">Ekstraklasa Poland</option>
+						<option value="russian">Russian Football Premier League</option>
+						<option value="nether">Eredivisie Netherlands</option>
+						<option value="portugal">Liga Portuguese</option>
+						<option value="turkey">Super Lig Turkey</option>
+					</select>
+				</td>
+			</div><div>
+				<td>4 B.</td>
+				<td>
+					<select name="a8">
+						<option value="muntd">Manchester United</option>
+						<option value="chel">Chelsea</option>
+						<option value="leic">Leciester City</option>
+						<option value="ars">Arsenal</option>
+						<option value="mancity">Manchester City</option>
+						<option value="liv">Liverpool</option>
+						<option value="spurs">Tottenham Hotspurs</option>
+						<option value="bar">Barcelona</option>
+						<option value="rma">Real Madrid</option>
+						<option value="atm">Athletico Madrid</option>
+						<option value="sev">Sevilla</option>
+						<option value="dpr">Deportivo</option>
+						<option value="val">Valencia</option>
+						<option value="juv">Juventus</option>
+						<option value="acm">AC Milan</option>
+						<option value="itm">Inter Milan</option>
+						<option value="npl">Napoli</option>
+						<option value="dor">Borussia Dortmund</option>
+						<option value="fcb">FC Bayern Munich</option>
+						<option value="sch">FC Schalke 04</option>
+						<option value="lev">Bayer Leverkusen</option>
+						<option value="gld">Borussia MonchenGladbach</option>
+						<option value="psg">Paris Saint Germain</option>
+						<option value="wol">Wolfsburg</option>
+						<option value="lyn">Lyon</option>
+						<option value="fcznit">FC Zenit</option>
+						<option value="ajfx">Ajax FC</option>
+						<option value="mrs">Marseille</option>
+						<option value="glt">Galatasaray</option>
+						<option value="ben">Benfica</option>
+						<option value="psv">PSV Eidenhoven</option>
+						<option value="cel">Celtic</option>
+						<option value="mon">Monaco</option>
+						<option value="roma">AS Roma</option>
+						<option value="fcp">FC Porto</option>
+					</select>
+				</td>
+				<td>
+					<select name="b8">
+						<option value="seria">Seria A</option>
+						<option value="ligue">Ligue 1</option>
+						<option value="laliga">La liga Santander</option>
+						<option value="bundes">Bundesliga</option>
+						<option value="barclay">English Premier League</option>
+						<option value="polish">Ekstraklasa Poland</option>
+						<option value="russian">Russian Football Premier League</option>
+						<option value="nether">Eredivisie Netherlands</option>
+						<option value="portugal">Liga Portuguese</option>
+						<option value="turkey">Super Lig Turkey</option>
+					</select>
+				</td>
+			</div>
+			</tr>
+			<tr><div>
+				<td>5 A.</td>
+				<td>
+					<select name="a9">
+						<option value="muntd">Manchester United</option>
+						<option value="chel">Chelsea</option>
+						<option value="leic">Leciester City</option>
+						<option value="ars">Arsenal</option>
+						<option value="mancity">Manchester City</option>
+						<option value="liv">Liverpool</option>
+						<option value="spurs">Tottenham Hotspurs</option>
+						<option value="bar">Barcelona</option>
+						<option value="rma">Real Madrid</option>
+						<option value="atm">Athletico Madrid</option>
+						<option value="sev">Sevilla</option>
+						<option value="dpr">Deportivo</option>
+						<option value="val">Valencia</option>
+						<option value="juv">Juventus</option>
+						<option value="acm">AC Milan</option>
+						<option value="itm">Inter Milan</option>
+						<option value="npl">Napoli</option>
+						<option value="dor">Borussia Dortmund</option>
+						<option value="fcb">FC Bayern Munich</option>
+						<option value="sch">FC Schalke 04</option>
+						<option value="lev">Bayer Leverkusen</option>
+						<option value="gld">Borussia MonchenGladbach</option>
+						<option value="psg">Paris Saint Germain</option>
+						<option value="wol">Wolfsburg</option>
+						<option value="lyn">Lyon</option>
+						<option value="fcznit">FC Zenit</option>
+						<option value="ajfx">Ajax FC</option>
+						<option value="mrs">Marseille</option>
+						<option value="glt">Galatasaray</option>
+						<option value="ben">Benfica</option>
+						<option value="psv">PSV Eidenhoven</option>
+						<option value="cel">Celtic</option>
+						<option value="mon">Monaco</option>
+						<option value="roma">AS Roma</option>
+						<option value="fcp">FC Porto</option>
+					</select>
+				</td>
+				<td>
+					<select name="b9">
+						<option value="seria">Seria A</option>
+						<option value="laliga">La liga Santander</option>
+						<option value="bundes">Bundesliga</option>
+						<option value="barclay">English Premier League</option>
+						<option value="ligue">Ligue 1</option>
+						<option value="polish">Ekstraklasa Poland</option>
+						<option value="russian">Russian Football Premier League</option>
+						<option value="nether">Eredivisie Netherlands</option>
+						<option value="portugal">Liga Portuguese</option>
+						<option value="turkey">Super Lig Turkey</option>
+					</select>
+				</td>
+			</div><div>
+				<td>5 B.</td>
+				<td>
+					<select name="a10">
+						<option value="muntd">Manchester United</option>
+						<option value="chel">Chelsea</option>
+						<option value="leic">Leciester City</option>
+						<option value="ars">Arsenal</option>
+						<option value="mancity">Manchester City</option>
+						<option value="liv">Liverpool</option>
+						<option value="spurs">Tottenham Hotspurs</option>
+						<option value="bar">Barcelona</option>
+						<option value="rma">Real Madrid</option>
+						<option value="atm">Athletico Madrid</option>
+						<option value="sev">Sevilla</option>
+						<option value="dpr">Deportivo</option>
+						<option value="val">Valencia</option>
+						<option value="juv">Juventus</option>
+						<option value="acm">AC Milan</option>
+						<option value="itm">Inter Milan</option>
+						<option value="npl">Napoli</option>
+						<option value="dor">Borussia Dortmund</option>
+						<option value="fcb">FC Bayern Munich</option>
+						<option value="sch">FC Schalke 04</option>
+						<option value="lev">Bayer Leverkusen</option>
+						<option value="gld">Borussia MonchenGladbach</option>
+						<option value="psg">Paris Saint Germain</option>
+						<option value="wol">Wolfsburg</option>
+						<option value="lyn">Lyon</option>
+						<option value="fcznit">FC Zenit</option>
+						<option value="ajfx">Ajax FC</option>
+						<option value="mrs">Marseille</option>
+						<option value="glt">Galatasaray</option>
+						<option value="ben">Benfica</option>
+						<option value="psv">PSV Eidenhoven</option>
+						<option value="cel">Celtic</option>
+						<option value="mon">Monaco</option>
+						<option value="roma">AS Roma</option>
+						<option value="fcp">FC Porto</option>
+					</select>
+				</td>
+				<td>
+					<select name="b10">
+						<option value="polish">Ekstraklasa Poland</option>
+						<option value="seria">Seria A</option>
+						<option value="laliga">La liga Santander</option>
+						<option value="bundes">Bundesliga</option>
+						<option value="barclay">English Premier League</option>
+						<option value="ligue">Ligue 1</option>
+						<option value="russian">Russian Football Premier League</option>
+						<option value="nether">Eredivisie Netherlands</option>
+						<option value="portugal">Liga Portuguese</option>
+						<option value="turkey">Super Lig Turkey</option>
+					</select>
+				</td>
+			</div>
+			</tr>
+			<tr><div>
+				<td>6 A.</td>
+				<td>
+					<select name="a11">
+						<option value="muntd">Manchester United</option>
+						<option value="chel">Chelsea</option>
+						<option value="leic">Leciester City</option>
+						<option value="ars">Arsenal</option>
+						<option value="mancity">Manchester City</option>
+						<option value="liv">Liverpool</option>
+						<option value="spurs">Tottenham Hotspurs</option>
+						<option value="bar">Barcelona</option>
+						<option value="rma">Real Madrid</option>
+						<option value="atm">Athletico Madrid</option>
+						<option value="sev">Sevilla</option>
+						<option value="dpr">Deportivo</option>
+						<option value="val">Valencia</option>
+						<option value="juv">Juventus</option>
+						<option value="acm">AC Milan</option>
+						<option value="itm">Inter Milan</option>
+						<option value="npl">Napoli</option>
+						<option value="dor">Borussia Dortmund</option>
+						<option value="fcb">FC Bayern Munich</option>
+						<option value="sch">FC Schalke 04</option>
+						<option value="lev">Bayer Leverkusen</option>
+						<option value="gld">Borussia MonchenGladbach</option>
+						<option value="psg">Paris Saint Germain</option>
+						<option value="wol">Wolfsburg</option>
+						<option value="lyn">Lyon</option>
+						<option value="fcznit">FC Zenit</option>
+						<option value="ajfx">Ajax FC</option>
+						<option value="mrs">Marseille</option>
+						<option value="glt">Galatasaray</option>
+						<option value="ben">Benfica</option>
+						<option value="psv">PSV Eidenhoven</option>
+						<option value="cel">Celtic</option>
+						<option value="mon">Monaco</option>
+						<option value="roma">AS Roma</option>
+						<option value="fcp">FC Porto</option>
+					</select>
+				</td>
+				<td>
+					<select name="b11">
+						<option value="polish">Ekstraklasa Poland</option>
+						<option value="laliga">La liga Santander</option>
+						<option value="bundes">Bundesliga</option>
+						<option value="barclay">English Premier League</option>
+						<option value="ligue">Ligue 1</option>
+						<option value="seria">Seria A</option>
+						<option value="russian">Russian Football Premier League</option>
+						<option value="nether">Eredivisie Netherlands</option>
+						<option value="portugal">Liga Portuguese</option>
+						<option value="turkey">Super Lig Turkey</option>
+					</select>
+				</td>
+			</div><div>
+				<td>6 B.</td>
+				<td>
+					<select name="a12">
+						<option value="muntd">Manchester United</option>
+						<option value="chel">Chelsea</option>
+						<option value="leic">Leciester City</option>
+						<option value="ars">Arsenal</option>
+						<option value="mancity">Manchester City</option>
+						<option value="liv">Liverpool</option>
+						<option value="spurs">Tottenham Hotspurs</option>
+						<option value="bar">Barcelona</option>
+						<option value="rma">Real Madrid</option>
+						<option value="atm">Athletico Madrid</option>
+						<option value="sev">Sevilla</option>
+						<option value="dpr">Deportivo</option>
+						<option value="val">Valencia</option>
+						<option value="juv">Juventus</option>
+						<option value="acm">AC Milan</option>
+						<option value="itm">Inter Milan</option>
+						<option value="npl">Napoli</option>
+						<option value="dor">Borussia Dortmund</option>
+						<option value="fcb">FC Bayern Munich</option>
+						<option value="sch">FC Schalke 04</option>
+						<option value="lev">Bayer Leverkusen</option>
+						<option value="gld">Borussia MonchenGladbach</option>
+						<option value="psg">Paris Saint Germain</option>
+						<option value="wol">Wolfsburg</option>
+						<option value="lyn">Lyon</option>
+						<option value="fcznit">FC Zenit</option>
+						<option value="ajfx">Ajax FC</option>
+						<option value="mrs">Marseille</option>
+						<option value="glt">Galatasaray</option>
+						<option value="ben">Benfica</option>
+						<option value="psv">PSV Eidenhoven</option>
+						<option value="cel">Celtic</option>
+						<option value="mon">Monaco</option>
+						<option value="roma">AS Roma</option>
+						<option value="fcp">FC Porto</option>
+					</select>
+				</td>
+				<td>
+					<select name="b12">
+						<option value="russian">Russian Football Premier League</option>
+						<option value="polish">Ekstraklasa Poland</option>
+						<option value="laliga">La liga Santander</option>
+						<option value="bundes">Bundesliga</option>
+						<option value="barclay">English Premier League</option>
+						<option value="ligue">Ligue 1</option>
+						<option value="seria">Seria A</option>
+						<option value="nether">Eredivisie Netherlands</option>
+						<option value="portugal">Liga Portuguese</option>
+						<option value="turkey">Super Lig Turkey</option>
+					</select>
+				</td>
+			</div>
+			</tr>
+			<tr><div>
+				<td>7 A.</td>
+				<td>
+					<select name="a13">
+						<option value="muntd">Manchester United</option>
+						<option value="chel">Chelsea</option>
+						<option value="leic">Leciester City</option>
+						<option value="ars">Arsenal</option>
+						<option value="mancity">Manchester City</option>
+						<option value="liv">Liverpool</option>
+						<option value="spurs">Tottenham Hotspurs</option>
+						<option value="bar">Barcelona</option>
+						<option value="rma">Real Madrid</option>
+						<option value="atm">Athletico Madrid</option>
+						<option value="sev">Sevilla</option>
+						<option value="dpr">Deportivo</option>
+						<option value="val">Valencia</option>
+						<option value="juv">Juventus</option>
+						<option value="acm">AC Milan</option>
+						<option value="itm">Inter Milan</option>
+						<option value="npl">Napoli</option>
+						<option value="dor">Borussia Dortmund</option>
+						<option value="fcb">FC Bayern Munich</option>
+						<option value="sch">FC Schalke 04</option>
+						<option value="lev">Bayer Leverkusen</option>
+						<option value="gld">Borussia MonchenGladbach</option>
+						<option value="psg">Paris Saint Germain</option>
+						<option value="wol">Wolfsburg</option>
+						<option value="lyn">Lyon</option>
+						<option value="fcznit">FC Zenit</option>
+						<option value="ajfx">Ajax FC</option>
+						<option value="mrs">Marseille</option>
+						<option value="glt">Galatasaray</option>
+						<option value="ben">Benfica</option>
+						<option value="psv">PSV Eidenhoven</option>
+						<option value="cel">Celtic</option>
+						<option value="mon">Monaco</option>
+						<option value="roma">AS Roma</option>
+						<option value="fcp">FC Porto</option>
+					</select>
+				</td>
+				<td>
+					<select name="b13">
+						<option value="russian">Russian Football Premier League</option>
+						<option value="laliga">La liga Santander</option>
+						<option value="bundes">Bundesliga</option>
+						<option value="barclay">English Premier League</option>
+						<option value="ligue">Ligue 1</option>
+						<option value="seria">Seria A</option>
+						<option value="polish">Ekstraklasa Poland</option>
+						<option value="nether">Eredivisie Netherlands</option>
+						<option value="portugal">Liga Portuguese</option>
+						<option value="turkey">Super Lig Turkey</option>
+					</select>
+				</td>
+			</div><div>
+				<td>7 B.</td>
+				<td>
+					<select name="a14">
+						<option value="muntd">Manchester United</option>
+						<option value="chel">Chelsea</option>
+						<option value="leic">Leciester City</option>
+						<option value="ars">Arsenal</option>
+						<option value="mancity">Manchester City</option>
+						<option value="liv">Liverpool</option>
+						<option value="spurs">Tottenham Hotspurs</option>
+						<option value="bar">Barcelona</option>
+						<option value="rma">Real Madrid</option>
+						<option value="atm">Athletico Madrid</option>
+						<option value="sev">Sevilla</option>
+						<option value="dpr">Deportivo</option>
+						<option value="val">Valencia</option>
+						<option value="juv">Juventus</option>
+						<option value="acm">AC Milan</option>
+						<option value="itm">Inter Milan</option>
+						<option value="npl">Napoli</option>
+						<option value="dor">Borussia Dortmund</option>
+						<option value="fcb">FC Bayern Munich</option>
+						<option value="sch">FC Schalke 04</option>
+						<option value="lev">Bayer Leverkusen</option>
+						<option value="gld">Borussia MonchenGladbach</option>
+						<option value="psg">Paris Saint Germain</option>
+						<option value="wol">Wolfsburg</option>
+						<option value="lyn">Lyon</option>
+						<option value="fcznit">FC Zenit</option>
+						<option value="ajfx">Ajax FC</option>
+						<option value="mrs">Marseille</option>
+						<option value="glt">Galatasaray</option>
+						<option value="ben">Benfica</option>
+						<option value="psv">PSV Eidenhoven</option>
+						<option value="cel">Celtic</option>
+						<option value="mon">Monaco</option>
+						<option value="roma">AS Roma</option>
+						<option value="fcp">FC Porto</option>
+					</select>
+				</td>
+				<td>
+					<select name="b14">
+						<option value="nether">Eredivisie Netherlands</option>
+						<option value="russian">Russian Football Premier League</option>
+						<option value="laliga">La liga Santander</option>
+						<option value="bundes">Bundesliga</option>
+						<option value="barclay">English Premier League</option>
+						<option value="ligue">Ligue 1</option>
+						<option value="seria">Seria A</option>
+						<option value="polish">Ekstraklasa Poland</option>
+						<option value="portugal">Liga Portuguese</option>
+						<option value="turkey">Super Lig Turkey</option>
+					</select>
+				</td>
+			</div>
+			</tr>
+			<tr><div>
+				<td>8 A.</td>
+				<td>
+					<select name="a15">
+						<option value="muntd">Manchester United</option>
+						<option value="chel">Chelsea</option>
+						<option value="leic">Leciester City</option>
+						<option value="ars">Arsenal</option>
+						<option value="mancity">Manchester City</option>
+						<option value="liv">Liverpool</option>
+						<option value="spurs">Tottenham Hotspurs</option>
+						<option value="bar">Barcelona</option>
+						<option value="rma">Real Madrid</option>
+						<option value="atm">Athletico Madrid</option>
+						<option value="sev">Sevilla</option>
+						<option value="dpr">Deportivo</option>
+						<option value="val">Valencia</option>
+						<option value="juv">Juventus</option>
+						<option value="acm">AC Milan</option>
+						<option value="itm">Inter Milan</option>
+						<option value="npl">Napoli</option>
+						<option value="dor">Borussia Dortmund</option>
+						<option value="fcb">FC Bayern Munich</option>
+						<option value="sch">FC Schalke 04</option>
+						<option value="lev">Bayer Leverkusen</option>
+						<option value="gld">Borussia MonchenGladbach</option>
+						<option value="psg">Paris Saint Germain</option>
+						<option value="wol">Wolfsburg</option>
+						<option value="lyn">Lyon</option>
+						<option value="fcznit">FC Zenit</option>
+						<option value="ajfx">Ajax FC</option>
+						<option value="mrs">Marseille</option>
+						<option value="glt">Galatasaray</option>
+						<option value="ben">Benfica</option>
+						<option value="psv">PSV Eidenhoven</option>
+						<option value="cel">Celtic</option>
+						<option value="mon">Monaco</option>
+						<option value="roma">AS Roma</option>
+						<option value="fcp">FC Porto</option>
+					</select>
+				</td>
+				<td>
+					<select name="b15">
+						<option value="nether">Eredivisie Netherlands</option>
+						<option value="laliga">La liga Santander</option>
+						<option value="bundes">Bundesliga</option>
+						<option value="barclay">English Premier League</option>
+						<option value="ligue">Ligue 1</option>
+						<option value="seria">Seria A</option>
+						<option value="polish">Ekstraklasa Poland</option>
+						<option value="russian">Russian Football Premier League</option>
+						<option value="portugal">Liga Portuguese</option>
+						<option value="turkey">Super Lig Turkey</option>
+					</select>
+				</td>
+			</div><div>
+				<td>8 B.</td>
+				<td>
+					<select name="a16">
+						<option value="muntd">Manchester United</option>
+						<option value="chel">Chelsea</option>
+						<option value="leic">Leciester City</option>
+						<option value="ars">Arsenal</option>
+						<option value="mancity">Manchester City</option>
+						<option value="liv">Liverpool</option>
+						<option value="spurs">Tottenham Hotspurs</option>
+						<option value="bar">Barcelona</option>
+						<option value="rma">Real Madrid</option>
+						<option value="atm">Athletico Madrid</option>
+						<option value="sev">Sevilla</option>
+						<option value="dpr">Deportivo</option>
+						<option value="val">Valencia</option>
+						<option value="juv">Juventus</option>
+						<option value="acm">AC Milan</option>
+						<option value="itm">Inter Milan</option>
+						<option value="npl">Napoli</option>
+						<option value="dor">Borussia Dortmund</option>
+						<option value="fcb">FC Bayern Munich</option>
+						<option value="sch">FC Schalke 04</option>
+						<option value="lev">Bayer Leverkusen</option>
+						<option value="gld">Borussia MonchenGladbach</option>
+						<option value="psg">Paris Saint Germain</option>
+						<option value="wol">Wolfsburg</option>
+						<option value="lyn">Lyon</option>
+						<option value="fcznit">FC Zenit</option>
+						<option value="ajfx">Ajax FC</option>
+						<option value="mrs">Marseille</option>
+						<option value="glt">Galatasaray</option>
+						<option value="ben">Benfica</option>
+						<option value="psv">PSV Eidenhoven</option>
+						<option value="cel">Celtic</option>
+						<option value="mon">Monaco</option>
+						<option value="roma">AS Roma</option>
+						<option value="fcp">FC Porto</option>
+					</select>
+				</td>
+				<td>
+					<select name="b16">
+						<option value="laliga">La liga Santander</option>
+						<option value="nether">Eredivisie Netherlands</option>
+						<option value="bundes">Bundesliga</option>
+						<option value="barclay">English Premier League</option>
+						<option value="ligue">Ligue 1</option>
+						<option value="seria">Seria A</option>
+						<option value="polish">Ekstraklasa Poland</option>
+						<option value="russian">Russian Football Premier League</option>
+						<option value="portugal">Liga Portuguese</option>
+						<option value="turkey">Super Lig Turkey</option>
+					</select>
+				</td>
+			</div>
+			</tr>
+			<tfoot>
+				<td>Position</td><td>Teams</td><td>League</td><td>Position</td><td>Teams</td><td>League</td><td><input type="submit"/></td>
+			</tfoot>
+		</table>
+	</form>
+</html>
